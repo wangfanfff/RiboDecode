@@ -78,6 +78,8 @@ To install the RiboCode program, execute the following command:
 pip install RiboCode-1.3.0-py3-none-any.whl
 ```
 
+If viennarna installation fails during the installation process, please upgrade to gcc version.
+
 After installation, use the following command to perform local testing:
 
 ```
@@ -96,6 +98,7 @@ ribo-code --cds gluc --env custom --mfe_weight 0 --optim_epoch 10 --csv env_file
 
 The parameters after 'env' can be defined manually to save the environment naming method of the generated sequence. 'csv' specifies the custom cellular environment file, same format as the csv file of the TranslationModel.
 
+Finally, the optimized sequence will be generated in results_natural and saved in the optim_results.txt file.
 
 ## Citation
 
