@@ -1,8 +1,11 @@
-#  RiboCode
+#  RiboCode: Deep Generative Optimization of mRNA Codon Sequences for Enhanced Protein Production and Therapeutic Efficacy.
 
-Deep Generative Optimization of mRNA Codon Sequences for Enhanced Protein Production and Therapeutic Efficacy.
+## Overview
+RiboCode is a deep learning-based tool designed to optimize mRNA codon sequences to enhance protein production and therapeutic efficacy. This repository provides the necessary code and resources to predict and optimize mRNA translation levels in various cellular environments.
 
 ## Environment
+To set up the environment, ensure you have the following dependencies installed:
+
 - Python=3.8.19  
 - torch=2.0.1
 - viennarna=2.6.4 
@@ -30,33 +33,29 @@ conda activate ribocode-env
 
 - **TranslationModel**
 
-You can download the necessary .whl file from the following link:
-
-https://drive.google.com/file/d/19Yyl8uUbjQn0TAA4E52ZUGBd_pb_RyW8/view?usp=sharing
-
-To install the TranslationModel program, execute the following command:
+Download the necessary **.whl** file from [here](https://drive.google.com/file/d/19Yyl8uUbjQn0TAA4E52ZUGBd_pb_RyW8/view?usp=sharing) and install it using:
 
 ```
 pip install TranslationModel-1.1.0-py3-none-any.whl
 ```
 
-After installation, use the following command to perform local testing:
+To perform local testing, use the following command:
 
 ```
 pred-translation --cds ATGGACGGGTAG --env HEK293T
 ```
 
-The maximum length of the coding sequence (CDS) should not exceed 4500. The current environment supports HEK293T, A549, and HeLa. Support for additional environments will be added gradually.
+* The maximum length of the coding sequence (CDS) should not exceed 4500.
 
-Following these instructions, you can obtain the predicted translation level of mRNA for a specific CDS sequence in a particular cellular environment.
+* Supported environments: **HEK293T**, **A549**, and **HeLa**. Additional environments will be added gradually.
 
-To use a custom cellular environment, run the following command:
+For custom cellular environments, use:
 
 ```
 pred-translation --cds ATGGACGGGTAG --csv env_file.csv
 ```
 
-Here, 'csv' specifies the custom cellular environment file. We provide a standard template file, env_file.csv, with the following format:
+Here, '**csv**' specifies the custom cellular environment file. We provide a standard template file, **env_file.csv**, with the following format:
 The first column contains human gene IDs, which must remain unchanged.
 The second column lists the corresponding mRNA RPKM values, provided by the user. Missing values can be replaced with 0.
 
@@ -68,43 +67,46 @@ pred-translation --help
 
 - **RiboCode**
 
-You can download the necessary .whl file from the following link:
-
-https://drive.google.com/file/d/1An4ppVlnjG9DF7yBqYlvdTqWrZxTRPuy/view?usp=sharing
-
-To install the RiboCode program, execute the following command:
+Download the necessary **.whl** file from [here](https://drive.google.com/file/d/1An4ppVlnjG9DF7yBqYlvdTqWrZxTRPuy/view?usp=sharing) and install it using:
 
 ```
 pip install RiboCode-1.3.0-py3-none-any.whl
 ```
 
-If viennarna installation fails during the installation process, please upgrade to gcc version.
+**Note**: If **viennarna** installation fails, please upgrade to the latest gcc version.
 
-After installation, use the following command to perform local testing:
+To perform local testing, use the following command:
 
 ```
 ribo-code --cds gluc --env HEK293T --mfe_weight 0 --optim_epoch 10
 ```
 
-The parameter 'mfe_weight' can be assigned a constant value ranging from 0 to 1, while the optim_epoch can be specified as an integer as required.
+* **mfe_weight** can be assigned a constant value ranging from 0 to 1.
 
-The cds options include gluc, NGF, H1N1, with additional sequences to be made available later. Similarly, the 'env' parameter can be set to HEK293T, A549, HeLa, with support for additional environments planned for future releases. 
+* **optim_epoch** can be specified as an integer as required.
 
-To use a custom cellular environment, run the following command:
+* Supported CDS options: **gluc**, **NGF**, **H1N1**. Additional sequences will be made available later.
+
+* Supported environments: **HEK293T**, **A549**, **HeLa**. Additional environments will be added gradually.
+
+For custom cellular environments, use:
 
 ```
 ribo-code --cds gluc --env custom --mfe_weight 0 --optim_epoch 10 --csv env_file.csv
 ```
 
-The parameters after 'env' can be defined manually to save the environment naming method of the generated sequence. 'csv' specifies the custom cellular environment file, same format as the csv file of the TranslationModel.
+* The parameters after **env** can be defined manually to save the environment naming method of the generated sequence.
 
-Finally, the optimized sequence will be generated in results_natural and saved in the optim_results.txt file.
+* **env_file.csv** should follow the same format as the csv file of the TranslationModel.
+
+The optimized sequence will be generated in **results_natural** and saved in the **optim_results.txt** file.
 
 ## Citation
+Please cite our work if you use RiboCode in your research:
 
 Deep Generative Optimization of mRNA Codon Sequences for Enhanced Protein Production and Therapeutic Efficacy.
 
-## History
+## Version History
 
 - **1.0 (2024-5-29)**
 
@@ -113,3 +115,7 @@ Deep Generative Optimization of mRNA Codon Sequences for Enhanced Protein Produc
 - **2.0 (2025-3-12)**
 
   Updata readme.md.
+  
+## Contact
+For any questions, issues, or further assistance, please feel free to contact us via email:
+wangf376@mail2.sysu.edu.cn
