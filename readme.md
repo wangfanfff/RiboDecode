@@ -74,7 +74,7 @@ Download the necessary **.whl** file from [here](https://drive.google.com/file/d
 pip install RiboCode-1.3.0-py3-none-any.whl
 ```
 
-**Note**: If **viennarna** installation fails, please upgrade tothe latest GCc compiler (≥5.0). Alternatively,install a specific ViennaRNA version using:
+**Note**: If **viennarna** installation fails, please upgrade tothe latest GCc compiler (**≥5.0**). Alternatively,install a specific ViennaRNA version using:
 
 ```
 pip install viennarna==2.6.4
