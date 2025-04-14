@@ -6,8 +6,9 @@ RiboCode is a deep learning-based tool designed to optimize mRNA codon sequences
 ## Environment
 To set up the environment, ensure you have the following dependencies installed:
 
-- Python=3.8.19  
+- Python=3.8.19
 - torch=2.0.1
+- CUDA=12.1  
 - viennarna=2.6.4 
 - numpy=1.24.4  
 - pandas=2.0.3
@@ -73,7 +74,11 @@ Download the necessary **.whl** file from [here](https://drive.google.com/file/d
 pip install RiboCode-1.3.0-py3-none-any.whl
 ```
 
-**Note**: If **viennarna** installation fails, please upgrade to the latest gcc version.
+**Note**: If **viennarna** installation fails, please upgrade tothe latest GCc compiler (≥5.0). Alternatively,install a specific ViennaRNA version using:
+
+```
+pip install viennarna==2.6.4
+```
 
 To perform local testing, use the following command:
 
@@ -83,7 +88,7 @@ ribo-code --cds gluc --env HEK293T --mfe_weight 0 --optim_epoch 10
 
 * **mfe_weight** can be assigned a constant value ranging from 0 to 1.
 
-* **optim_epoch** can be specified as an integer as required.
+* **optim_epoch** can be set to any integer value as needed, representing the number of iterations for model optimization. We recommend setting optim_epoch=10.
 
 * Supported CDS options: **gluc**, **NGF**, **H1N1**. Additional sequences will be made available later.
 
@@ -99,7 +104,15 @@ ribo-code --cds gluc --env custom --mfe_weight 0 --optim_epoch 10 --csv env_file
 
 * **env_file.csv** should follow the same format as the csv file of the TranslationModel.
 
-The optimized sequence will be generated in **results_natural** and saved in the **optim_results.txt** file.
+**Output Format:**
+
+The optimized sequence will be generated in **results_natural** and saved to the **optim_results.txt** file. This file contains three columns:
+
+1. **mRNA codon sequence**
+2. **Predicted translation level**
+3. **Predicted MFE (Minimum Free Energy)**
+
+**Note**: When **mfe_weight=0**, the software skips MFE optimization. In such cases, the values in the third column are meaningless.
 
 ## Citation
 Please cite our work if you use RiboCode in your research:
