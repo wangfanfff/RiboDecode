@@ -1,7 +1,7 @@
-#  RiboCode: Deep Generative Optimization of mRNA Codon Sequences for Enhanced Protein Production and Therapeutic Efficacy.
+#  RiboDecode: Deep Generative Optimization of mRNA Codon Sequences for Enhanced Protein Production and Therapeutic Efficacy.
 
 ## Overview
-RiboCode is a deep learning-based tool designed to optimize mRNA codon sequences to enhance protein production and therapeutic efficacy. This repository provides the necessary code and resources to predict and optimize mRNA translation levels in various cellular environments.
+RiboDecode is a deep learning-based tool designed to optimize mRNA codon sequences to enhance protein production and therapeutic efficacy. This repository provides the necessary code and resources to predict and optimize mRNA translation levels in various cellular environments.
 
 ## Environment
 To set up the environment, ensure you have the following dependencies installed:
@@ -23,13 +23,13 @@ The required dependency packages will be automatically downloaded the first time
 You can create a new conda environment using the following command:
 
 ```
-conda create -n ribocode-env python=3.8
+conda create -n ribodecode python=3.8
 ```
 
 Activate the environment：
 
 ```
-conda activate ribocode-env
+conda activate ribodecode
 ```
 
 - **TranslationModel**
@@ -66,7 +66,7 @@ If you have any questions about the TranslationModel, you can get help informati
 pred-translation --help
 ```
 
-- **RiboCode**
+- **RiboDeCode**
 
 Download the necessary **.whl** file from [here](https://drive.google.com/file/d/1An4ppVlnjG9DF7yBqYlvdTqWrZxTRPuy/view?usp=sharing) and install it using:
 
@@ -115,7 +115,7 @@ The optimized sequence will be generated in **results_natural** and saved to the
 **Note**: When **mfe_weight=0**, the software skips MFE optimization. In such cases, the values in the third column are meaningless.
 
 ## Citation
-Please cite our work if you use RiboCode in your research:
+Please cite our work if you use RiboDeCode in your research:
 
 Deep Generative Optimization of mRNA Codon Sequences for Enhanced Protein Production and Therapeutic Efficacy.
 
