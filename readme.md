@@ -115,7 +115,7 @@ The optimized sequence will be generated in **results_natural** and saved to the
 **Note**: When **mfe_weight=0**, the software skips MFE optimization. In such cases, the values in the third column are meaningless.
 
 ## Citation
-Please cite our work if you use RiboDeCode in your research:
+Please cite our work if you use RiboDecode in your research:
 
 Deep Generative Optimization of mRNA Codon Sequences for Enhanced Protein Production and Therapeutic Efficacy.
 
