@@ -66,7 +66,7 @@ If you have any questions about the TranslationModel, you can get help informati
 pred-translation --help
 ```
 
-- **RiboDeCode**
+- **RiboDecode**
 
 Download the necessary **.whl** file from [here](https://drive.google.com/file/d/1An4ppVlnjG9DF7yBqYlvdTqWrZxTRPuy/view?usp=sharing) and install it using:
 
