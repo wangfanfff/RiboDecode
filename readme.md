@@ -68,10 +68,10 @@ pred-translation --help
 
 - **RiboDecode**
 
-Download the necessary **.whl** file from [here](https://drive.google.com/file/d/1An4ppVlnjG9DF7yBqYlvdTqWrZxTRPuy/view?usp=sharing) and install it using:
+Download the necessary **.whl** file from [here](https://drive.google.com/file/d/1uGrdufgzGErL0TzNADE3we185KP1pVgu/view?usp=sharing) and install it using:
 
 ```
-pip install RiboCode-1.3.0-py3-none-any.whl
+pip install ribodecode-1.3.0-py3-none-any.whl
 ```
 
 **Note**: If **viennarna** installation fails, please upgrade tothe latest GCc compiler (**≥5.0**). Alternatively,install a specific ViennaRNA version using:
@@ -83,7 +83,7 @@ pip install viennarna==2.6.4
 To perform local testing, use the following command:
 
 ```
-ribo-code --cds gluc --env HEK293T --mfe_weight 0 --optim_epoch 10
+ribo-decode --cds gluc --env HEK293T --mfe_weight 0 --optim_epoch 10
 ```
 
 * **mfe_weight** can be assigned a constant value ranging from 0 to 1.
@@ -97,7 +97,7 @@ ribo-code --cds gluc --env HEK293T --mfe_weight 0 --optim_epoch 10
 For custom cellular environments, use:
 
 ```
-ribo-code --cds gluc --env custom --mfe_weight 0 --optim_epoch 10 --csv env_file.csv
+ribo-decode --cds gluc --env custom --mfe_weight 0 --optim_epoch 10 --csv env_file.csv
 ```
 
 * The parameters after **env** can be defined manually to save the environment naming method of the generated sequence.
