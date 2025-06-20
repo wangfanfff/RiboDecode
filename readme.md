@@ -68,7 +68,7 @@ pred-translation --help
 
 - **RiboDecode**
 
-Download the necessary **.whl** file from [here](https://drive.google.com/file/d/1uGrdufgzGErL0TzNADE3we185KP1pVgu/view?usp=sharing) and install it using:
+Download the necessary **.whl** file from [here](https://drive.google.com/file/d/1BVrQvO85b0HI34cWfCNtim_eG2LXSEuv/view?usp=sharing) and install it using:
 
 ```
 pip install ribodecode-1.3.0-py3-none-any.whl
