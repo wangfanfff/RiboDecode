@@ -83,21 +83,25 @@ pip install viennarna==2.6.4
 To perform local testing, use the following command:
 
 ```
-ribo-decode --cds gluc --env HEK293T --mfe_weight 0 --optim_epoch 10
+ribo-decode --cds example --cds_seq ATGGACGGGTAG --env HEK293T --mfe_weight 0 --optim_epoch 10 --alpha 100 --beta 100
 ```
 
 * **mfe_weight** can be assigned a constant value ranging from 0 to 1.
 
 * **optim_epoch** can be set to any integer value as needed, representing the number of iterations for model optimization. We recommend setting optim_epoch=10.
 
-* Supported CDS options: **gluc**, **NGF**, **H1N1**. Additional sequences will be made available later.
+* **cds**	is the custom name for the coding sequence (CDS).
+
+* **cds_seq**	is the input CDS nucleotide sequence to be optimized.
+
+* **alpha** and **beta** are custom loss function coefficients, and the default value of 100 is generally sufficient.
 
 * Supported environments: **HEK293T**, **A549**, **HeLa**. Additional environments will be added gradually.
 
 For custom cellular environments, use:
 
 ```
-ribo-decode --cds gluc --env custom --mfe_weight 0 --optim_epoch 10 --csv env_file.csv
+ribo-decode --cds example --cds_seq ATGGACGGGTAG --env custom --mfe_weight 0 --optim_epoch 10 --csv env_file.csv
 ```
 
 * The parameters after **env** can be defined manually to save the environment naming method of the generated sequence.
@@ -126,6 +130,10 @@ Deep Generative Optimization of mRNA Codon Sequences for Enhanced Protein Produc
   Updata readme.md.
   
 - **2.0 (2025-3-12)**
+
+  Updata readme.md.
+
+- **3.0 (2025-6-23)**
 
   Updata readme.md.
   
