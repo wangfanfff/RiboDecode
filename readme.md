@@ -1,7 +1,7 @@
-#  RiboDecode: Deep Generative Optimization of mRNA Codon Sequences for Enhanced Protein Production and Therapeutic Efficacy.
+#  RiboDecode: Deep Generative Optimization of mRNA Codon Sequences for Enhanced mRNA Translation and Therapeutic Efficacy.
 
 ## Overview
-RiboDecode is a deep learning-based tool designed to optimize mRNA codon sequences to enhance protein production and therapeutic efficacy. This repository provides the necessary code and resources to predict and optimize mRNA translation levels in various cellular environments.
+RiboDecode is a deep learning-based tool designed to optimize mRNA codon sequences to enhance mRNA translation and therapeutic efficacy. This repository provides the necessary code and resources to predict and optimize mRNA translation levels in various cellular environments.
 
 ## Environment
 To set up the environment, ensure you have the following dependencies installed:
@@ -18,7 +18,7 @@ To set up the environment, ensure you have the following dependencies installed:
 
 The required dependency packages will be automatically downloaded the first time you run the program.
 
-## Installation and Usage
+## **Installation and Usage**
 
 You can create a new conda environment using the following command:
 
@@ -26,13 +26,13 @@ You can create a new conda environment using the following command:
 conda create -n ribodecode python=3.8
 ```
 
-Activate the environment：
+Activate the environment:
 
 ```
 conda activate ribodecode
 ```
 
-- **TranslationModel**
+### **TranslationModel**
 
 Download the necessary **.whl** file from [here](https://drive.google.com/file/d/19Yyl8uUbjQn0TAA4E52ZUGBd_pb_RyW8/view?usp=sharing) and install it using:
 
@@ -46,9 +46,9 @@ To perform local testing, use the following command:
 pred-translation --cds ATGGACGGGTAG --env HEK293T
 ```
 
-* The maximum length of the coding sequence (CDS) should not exceed 4500.
+* The maximum length of the coding sequence (**cds**) should not exceed 4500nt.
 
-* Supported environments: **HEK293T**, **A549**, and **HeLa**. Additional environments will be added gradually.
+* Pre-configured cellular environments (**env**): **HEK293T**, **A549**, and **HeLa**. 
 
 For custom cellular environments, use:
 
@@ -66,7 +66,7 @@ If you have any questions about the TranslationModel, you can get help informati
 pred-translation --help
 ```
 
-- **RiboDecode**
+### **RiboDecode**
 
 Download the necessary **.whl** file from [here](https://drive.google.com/file/d/1BVrQvO85b0HI34cWfCNtim_eG2LXSEuv/view?usp=sharing) and install it using:
 
@@ -86,17 +86,18 @@ To perform local testing, use the following command:
 ribo-decode --cds example --cds_seq ATGGACGGGTAG --env HEK293T --mfe_weight 0 --optim_epoch 10 --alpha 100 --beta 100
 ```
 
-* **mfe_weight** can be assigned a constant value ranging from 0 to 1.
+* **cds**	is the custom name for the coding sequence.
+
+* **cds_seq**	is the input CDS nucleotide sequence to be optimized (should not exceed 4500nt).
+
+* Pre-configured cellular environments (**env**): **HEK293T**, **A549**, **HeLa**. 
+
+* **mfe_weight** can be assigned a constant value ranging from 0 to 1. If 0, the model optimizes only translation. If 1, the model optimizes only MFE (Minimum Free Energy).
 
 * **optim_epoch** can be set to any integer value as needed, representing the number of iterations for model optimization. We recommend setting optim_epoch=10.
 
-* **cds**	is the custom name for the coding sequence (CDS).
+* **alpha** and **beta** are balancing coefficients for the translation and MFE terms in the loss function. Default: 100 (sufficient for most codon sequences where translation prediction < 100 and MFE > -1000 kcal/mol). If translation prediction > 100, set alpha to 1000. If MFE < -1000 kcal/mol, set beta to 1000.
 
-* **cds_seq**	is the input CDS nucleotide sequence to be optimized.
-
-* **alpha** and **beta** are custom loss function coefficients, and the default value of 100 is generally sufficient.
-
-* Supported environments: **HEK293T**, **A549**, **HeLa**. Additional environments will be added gradually.
 
 For custom cellular environments, use:
 
@@ -110,18 +111,18 @@ ribo-decode --cds example --cds_seq ATGGACGGGTAG --env custom --mfe_weight 0 --o
 
 **Output Format:**
 
-The optimized sequence will be generated in **results_natural** and saved to the **optim_results.txt** file. This file contains three columns:
+The optimized sequence will be generated in **results_natural** folder and saved to the **optim_results.txt** file for each epoch (./results_natural/**env**_optim_mfe_dist-optim/**epoch_number**/samples/optim_results.txt). The results contains three columns:
 
 1. **mRNA codon sequence**
 2. **Predicted translation level**
-3. **Predicted MFE (Minimum Free Energy)**
+3. **Predicted MFE**
 
 **Note**: When **mfe_weight=0**, the software skips MFE optimization. In such cases, the values in the third column are meaningless.
 
 ## Citation
 Please cite our work if you use RiboDecode in your research:
 
-Deep Generative Optimization of mRNA Codon Sequences for Enhanced Protein Production and Therapeutic Efficacy.
+Deep Generative Optimization of mRNA Codon Sequences for Enhanced mRNA Translation and Therapeutic Efficacy.
 
 ## Version History
 
