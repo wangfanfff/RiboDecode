@@ -122,7 +122,7 @@ The optimized sequence will be generated in **results_natural** folder and saved
 ## Citation
 Please cite our work if you use RiboDecode in your research:
 
-Deep Generative Optimization of mRNA Codon Sequences for Enhanced mRNA Translation and Therapeutic Efficacy.
+Li, Y., Wang, F., Yang, J. et al. Deep generative optimization of mRNA codon sequences for enhanced mRNA translation and therapeutic efficacy. Nat Commun 16, 9957 (2025). https://doi.org/10.1038/s41467-025-64894-x
 
 ## Version History
 
